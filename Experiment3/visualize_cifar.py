@@ -92,35 +92,35 @@ def main():
 
     # print(net.convs[0][1])
 
-    # W = 2
-    # H = 5
-    # fig, axs = plt.subplots(W, H, sharex='col', sharey='row',
-    #                         gridspec_kw={'wspace': 0,'hspace': 0})
-    # for i in range(10):
-    #     ax = axs[i % W, i//W]
-    #     img = optimize(net, step=0, fsize=8*i, sizes=[8,12,16,24,32], device=device, dim_feat=3)    # [8,12,16,24,32]
-    #     s = ax.imshow(img.transpose(1, 2, 0))   # 对彩图转置矩阵
-    #     ax.set_xticks([])
-    #     ax.set_yticks([])
-    #     ax.set_xlabel(class_names[i])
-    # fig.colorbar
-    # plt.ioff()
-    # plt.tight_layout()
-    # plt.show()
-
-
-    fig, axs = plt.subplots(1, 8, gridspec_kw={'wspace': 0,'hspace': 0})
-    for i in range(8):
-        ax = axs[i]
-        img = optimize(net, step=5, fsize=i, sizes=[8,12,16,24,32], device=device, dim_feat=3)    # [8,12,16,24,32]
+    W = 2
+    H = 5
+    fig, axs = plt.subplots(W, H, sharex='col', sharey='row',
+                            gridspec_kw={'wspace': 0,'hspace': 0})
+    for i in range(10):
+        ax = axs[i % W, i//W]
+        img = optimize(net, step=0, fsize=8*i, sizes=[8,12,16,24,32], device=device, dim_feat=3)    # [8,12,16,24,32]
         s = ax.imshow(img.transpose(1, 2, 0))   # 对彩图转置矩阵
         ax.set_xticks([])
         ax.set_yticks([])
-        ax.set_xlabel('filter'+str(i))
+        ax.set_xlabel(class_names[i])
     fig.colorbar
     plt.ioff()
     plt.tight_layout()
     plt.show()
+
+
+    # fig, axs = plt.subplots(1, 8, gridspec_kw={'wspace': 0,'hspace': 0})
+    # for i in range(8):
+    #     ax = axs[i]
+    #     img = optimize(net, step=5, fsize=i, sizes=[8,12,16,24,32], device=device, dim_feat=3)    # [8,12,16,24,32]
+    #     s = ax.imshow(img.transpose(1, 2, 0))   # 对彩图转置矩阵
+    #     ax.set_xticks([])
+    #     ax.set_yticks([])
+    #     ax.set_xlabel('filter'+str(i))
+    # fig.colorbar
+    # plt.ioff()
+    # plt.tight_layout()
+    # plt.show()
 
 
 main()

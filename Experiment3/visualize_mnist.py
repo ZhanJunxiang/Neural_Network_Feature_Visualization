@@ -91,31 +91,31 @@ def main():
     
     net.load_state_dict(torch.load('mnist_augs_cnn.pt'))
 
-    # W = 2
-    # H = 5
-    # fig, axs = plt.subplots(W, H, sharex='col', sharey='row',
-    #                         gridspec_kw={'wspace': 0,'hspace': 0})
-    # for i in range(10):
-    #     ax = axs[i % W, i//W]
-    #     img = optimize(net, step=-1, fsize=i, sizes=[8,12,16,24,32], device=device, dim_feat=1)
-    #     # s = ax.imshow(img.transpose(1, 2, 0))   # 对彩图转置矩阵
-    #     s = ax.imshow(img)   
-    #     ax.set_xticks([])
-    #     ax.set_yticks([])
-    #     ax.set_xlabel(i)
-
-    fig, axs = plt.subplots(1, 8, gridspec_kw={'wspace': 0,'hspace': 0})
-    for i in range(8):
-        ax = axs[i]
-        img = optimize(net, step=4, fsize=i, sizes=[8,12,16,24,32], device=device, dim_feat=1)    # [8,12,16,24,32]
-        s = ax.imshow(img)
+    W = 2
+    H = 5
+    fig, axs = plt.subplots(W, H, sharex='col', sharey='row',
+                            gridspec_kw={'wspace': 0,'hspace': 0})
+    for i in range(10):
+        ax = axs[i % W, i//W]
+        img = optimize(net, step=-1, fsize=i, sizes=[8,12,16,24,32], device=device, dim_feat=1)
+        # s = ax.imshow(img.transpose(1, 2, 0))   # 对彩图转置矩阵
+        s = ax.imshow(img)   
         ax.set_xticks([])
         ax.set_yticks([])
-        ax.set_xlabel('filter'+str(i))
-    fig.colorbar
-    plt.ioff()
-    plt.tight_layout()
-    plt.show()
+        ax.set_xlabel(i)
+
+    # fig, axs = plt.subplots(1, 8, gridspec_kw={'wspace': 0,'hspace': 0})
+    # for i in range(8):
+    #     ax = axs[i]
+    #     img = optimize(net, step=4, fsize=i, sizes=[8,12,16,24,32], device=device, dim_feat=1)    # [8,12,16,24,32]
+    #     s = ax.imshow(img)
+    #     ax.set_xticks([])
+    #     ax.set_yticks([])
+    #     ax.set_xlabel('filter'+str(i))
+    # fig.colorbar
+    # plt.ioff()
+    # plt.tight_layout()
+    # plt.show()
 
 
 main()
