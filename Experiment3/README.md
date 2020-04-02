@@ -32,20 +32,20 @@ python visualize_mnist.py
 分别显示在cifar和mnist上训练网络的特征图分类可视化结果
 可通过设置加载不同的.pt参数，比较AUG的影响
 
-cifar+no_Aug
+##### cifar+no_Aug
 
 ![cifar_res18](result/cifar/cifar_res18.png)
-cifar+flip_Aug
+##### cifar+flip_Aug
 
 ![cifar_aug_res18](result/cifar/cifar_aug_res18.png)
-cifar+strong_Aug
+##### cifar+strong_Aug
 
 ![cifar_augs_res18](result/cifar/cifar_augs_res18.png)
 
 
-mnist+no_Aug
+##### mnist+no_Aug
 ![mnist_noaug_cnn](result/mnist/mnist_noaug_cnn.png)
-mnist+Aug
+##### mnist+Aug
 ![mnist_augs_cnn](result/mnist/mnist_augs_cnn.png)
 
 
